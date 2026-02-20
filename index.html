@@ -1,1 +1,863 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jiya EcomCare - Shopify Customer Support Specialist</title>
+    
+    <!-- Meta Tags for SEO -->
+    <meta name="description" content="Professional Shopify Customer Support Specialist helping eCommerce brands reduce refunds, improve response time, and increase customer satisfaction.">
+    <meta name="keywords" content="Shopify Customer Support Specialist, eCommerce Virtual Assistant, Shopify Email Support, Shopify Live Chat Agent">
+    <meta name="author" content="Javeria Ramzan">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* THEME VARIABLES */
+        :root {
+            /* Light Theme (default) */
+            --primary-color: #4a90e2;
+            --primary-dark: #357abd;
+            --text-color: #333;
+            --heading-color: #2c3e50;
+            --bg-color: #ffffff;
+            --section-bg: #f8fafc;
+            --card-bg: #ffffff;
+            --nav-bg: #ffffff;
+            --footer-bg: #2c3e50;
+            --footer-text: #ffffff;
+        }
 
+        /* Dark Theme */
+        [data-theme="dark"] {
+            --primary-color: #64b5f6;
+            --primary-dark: #4a90e2;
+            --text-color: #e0e0e0;
+            --heading-color: #ffffff;
+            --bg-color: #1a1a1a;
+            --section-bg: #2d2d2d;
+            --card-bg: #333333;
+            --nav-bg: #2d2d2d;
+            --footer-bg: #000000;
+            --footer-text: #e0e0e0;
+        }
+
+        /* Blue Theme */
+        [data-theme="blue"] {
+            --primary-color: #1e88e5;
+            --primary-dark: #1565c0;
+            --text-color: #333;
+            --heading-color: #0d47a1;
+            --bg-color: #e3f2fd;
+            --section-bg: #bbdefb;
+            --card-bg: #ffffff;
+            --nav-bg: #ffffff;
+            --footer-bg: #0d47a1;
+            --footer-text: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+        }
+        
+        /* Navigation */
+        nav {
+            background: var(--nav-bg);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--heading-color);
+        }
+        
+        .logo span {
+            color: var(--primary-color);
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+        
+        .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--text-color);
+        }
+        
+        /* Theme Switcher */
+        .theme-switcher select {
+            padding: 0.5rem 1rem;
+            border: 2px solid var(--primary-color);
+            border-radius: 5px;
+            background: var(--card-bg);
+            color: var(--text-color);
+            font-family: 'Inter', sans-serif;
+            cursor: pointer;
+            outline: none;
+        }
+        
+        .theme-switcher select:hover {
+            border-color: var(--primary-dark);
+        }
+        
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--section-bg) 0%, var(--bg-color) 100%);
+            padding: 8rem 2rem 4rem;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 2.8rem;
+            color: var(--heading-color);
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .hero-subhead {
+            font-size: 1.2rem;
+            color: var(--text-color);
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+        
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            margin: 0.5rem;
+        }
+        
+        .btn-primary {
+            background: var(--primary-color);
+            color: white;
+            box-shadow: 0 4px 6px rgba(74, 144, 226, 0.2);
+        }
+        
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(74, 144, 226, 0.3);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+        }
+        
+        .btn-secondary:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+        
+        /* Sections */
+        section {
+            padding: 4rem 0;
+        }
+        
+        section:nth-child(even) {
+            background-color: var(--section-bg);
+        }
+        
+        h2 {
+            font-size: 2.2rem;
+            color: var(--heading-color);
+            margin-bottom: 2rem;
+            text-align: center;
+            position: relative;
+        }
+        
+        h2:after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: var(--primary-color);
+            margin: 1rem auto 0;
+        }
+        
+        /* Problem Section */
+        .problem-section {
+            background: var(--card-bg);
+            text-align: center;
+            padding: 3rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            margin: 2rem auto;
+            max-width: 900px;
+        }
+        
+        .problem-section h3 {
+            font-size: 2rem;
+            color: var(--heading-color);
+            margin-bottom: 1rem;
+        }
+        
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .service-card {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+            text-align: center;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .service-card i {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .service-card h3 {
+            margin-bottom: 1rem;
+            color: var(--heading-color);
+        }
+        
+        /* Tools Grid */
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .tool-card {
+            background: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        
+        .tool-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        
+        .tool-card i {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .tool-card h4 {
+            margin-bottom: 0.5rem;
+            color: var(--heading-color);
+        }
+        
+        .tool-card p {
+            font-size: 0.9rem;
+            color: var(--text-color);
+        }
+        
+        /* Experience Grid */
+        .experience-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .exp-item {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        }
+        
+        .exp-item i {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .exp-item h4 {
+            margin-bottom: 1rem;
+            color: var(--heading-color);
+        }
+        
+        .exp-item ul {
+            list-style: none;
+        }
+        
+        .exp-item li {
+            margin-bottom: 0.5rem;
+            color: var(--text-color);
+        }
+        
+        .exp-item li:before {
+            content: "✓";
+            color: var(--primary-color);
+            margin-right: 0.5rem;
+        }
+        
+        /* Testimonials */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .testimonial-card {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        }
+        
+        .testimonial-card .stars {
+            color: #f1c40f;
+            margin-bottom: 1rem;
+        }
+        
+        .testimonial-card p {
+            font-style: italic;
+            margin-bottom: 1rem;
+            color: var(--text-color);
+        }
+        
+        .testimonial-card h4 {
+            color: var(--heading-color);
+            margin-bottom: 0.3rem;
+        }
+        
+        .testimonial-card .position {
+            color: var(--text-color);
+            font-size: 0.9rem;
+        }
+        
+        /* Contact Section */
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+        
+        .contact-info, .contact-form {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: 'Inter', sans-serif;
+            background: var(--bg-color);
+            color: var(--text-color);
+        }
+        
+        .form-group textarea {
+            height: 120px;
+            resize: vertical;
+        }
+        
+        .btn-group {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--footer-bg);
+            color: var(--footer-text);
+            padding: 3rem 2rem 1rem;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-section h4 {
+            margin-bottom: 1rem;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .social-links a {
+            color: var(--footer-text);
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+        
+        .social-links a:hover {
+            color: var(--primary-color);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #455a64;
+            font-size: 0.9rem;
+            color: var(--footer-text);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .nav-links.active {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                right: 0;
+                background: var(--nav-bg);
+                padding: 2rem;
+                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+            }
+            
+            .menu-toggle {
+                display: block;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            .theme-switcher {
+                margin: 0 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">Jiya <span>EcomCare</span></div>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            
+            <!-- THEME SWITCHER -->
+            <div class="theme-switcher">
+                <select id="theme-select" onchange="switchTheme(this.value)">
+                    <option value="light">🌞 Light</option>
+                    <option value="dark">🌙 Dark</option>
+                    <option value="blue">💙 Soft Blue</option>
+                </select>
+            </div>
+            
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#services">Services</a>
+                <a href="#tools">Tools</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <h1>Your Customers Deserve Fast & Professional Support — I Deliver It.</h1>
+            <p class="hero-subhead">Helping Shopify Stores Reduce Refunds, Increase Retention & Improve Customer Satisfaction.</p>
+            <a href="#contact" class="btn btn-primary">Hire Me</a>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <div class="container">
+        <div class="problem-section">
+            <h3>Struggling With Customer Complaints?</h3>
+            <p>Are late replies, refund requests, and angry emails hurting your store reputation? I provide fast, empathetic, and professional support that turns frustrated customers into loyal buyers.</p>
+            <a href="#contact" class="btn btn-secondary">Let's Fix Your Support System</a>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+                <p style="font-size: 1.1rem; margin-bottom: 2rem;">I am a dedicated Shopify Customer Support Specialist helping eCommerce brands deliver exceptional customer experiences. With expertise in email handling, live chat, refunds, chargebacks, and order tracking, I ensure smooth communication between brands and customers.</p>
+                <p style="font-size: 1.2rem; font-weight: 600;">My goal is simple: Reduce complaints. Improve response time. Increase customer loyalty.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+        <div class="container">
+            <h2>Services I Offer</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <i class="fas fa-envelope"></i>
+                    <h3>Shopify Email Support</h3>
+                    <p>Professional email handling with quick response times</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-comment-dots"></i>
+                    <h3>Live Chat Support</h3>
+                    <p>Real-time customer assistance</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-shopping-cart"></i>
+                    <h3>Order Management</h3>
+                    <p>Efficient order processing and tracking</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-undo-alt"></i>
+                    <h3>Refunds & Chargebacks</h3>
+                    <p>Expert handling of disputes</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-smile"></i>
+                    <h3>Customer Complaint Resolution</h3>
+                    <p>Empathetic issue resolution</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-truck"></i>
+                    <h3>Tracking & Fulfillment Support</h3>
+                    <p>Keep customers informed</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section>
+        <div class="container">
+            <h2>Experience & Support Projects</h2>
+            <div class="experience-grid">
+                <div class="exp-item">
+                    <i class="fas fa-store"></i>
+                    <h4>Shopify Store Management</h4>
+                    <ul>
+                        <li>Managed Shopify store customer emails</li>
+                        <li>Handled daily live chat inquiries</li>
+                        <li>Processed refunds & chargebacks</li>
+                        <li>Reduced response time by 60%</li>
+                        <li>Maintained 95%+ customer satisfaction</li>
+                    </ul>
+                </div>
+                <div class="exp-item">
+                    <i class="fas fa-chart-line"></i>
+                    <h4>Key Achievements</h4>
+                    <ul>
+                        <li>1000+ support tickets resolved</li>
+                        <li>24-hour average response time</li>
+                        <li>98% positive feedback rating</li>
+                        <li>30% reduction in refund requests</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Me -->
+    <section>
+        <div class="container">
+            <h2>Why Choose Me</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <i class="fas fa-clock"></i>
+                    <h3>Fast Response</h3>
+                    <p>Average response time under 2 hours</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-heart"></i>
+                    <h3>Empathetic Support</h3>
+                    <p>Every interaction handled with care</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-check-circle"></i>
+                    <h3>Problem Solver</h3>
+                    <p>Quick resolution of customer issues</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-chart-bar"></i>
+                    <h3>Data-Driven</h3>
+                    <p>Continuous improvement</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tools Section -->
+    <section id="tools">
+        <div class="container">
+            <h2>Tools I Work With</h2>
+            <div class="tools-grid">
+                <div class="tool-card">
+                    <i class="fab fa-shopify"></i>
+                    <h4>Shopify</h4>
+                    <p>Expert in Shopify admin</p>
+                </div>
+                <div class="tool-card">
+                    <i class="fas fa-headset"></i>
+                    <h4>Gorgias</h4>
+                    <p>eCommerce helpdesk</p>
+                </div>
+                <div class="tool-card">
+                    <i class="fas fa-ticket-alt"></i>
+                    <h4>Zendesk</h4>
+                    <p>Customer service platform</p>
+                </div>
+                <div class="tool-card">
+                    <i class="fas fa-life-ring"></i>
+                    <h4>Freshdesk</h4>
+                    <p>Multi-channel support</p>
+                </div>
+                <div class="tool-card">
+                    <i class="fas fa-envelope-open-text"></i>
+                    <h4>Gmail</h4>
+                    <p>Email communication</p>
+                </div>
+                <div class="tool-card">
+                    <i class="fab fa-slack"></i>
+                    <h4>Slack</h4>
+                    <p>Team collaboration</p>
+                </div>
+                <div class="tool-card">
+                    <i class="fab fa-stripe"></i>
+                    <h4>Stripe</h4>
+                    <p>Payment processing</p>
+                </div>
+                <div class="tool-card">
+                    <i class="fab fa-paypal"></i>
+                    <h4>PayPal</h4>
+                    <p>Payment handling</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section>
+        <div class="container">
+            <h2>What Clients Say</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p>"Javeria has been a game-changer for our customer support. Response times improved dramatically."</p>
+                    <h4>Sarah Johnson</h4>
+                    <p class="position">Owner, Bloom & Co.</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p>"Professional, responsive, and truly cares about our customers. Highly recommended!"</p>
+                    <h4>Michael Chen</h4>
+                    <p class="position">Founder, TechGear</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p>"The best decision I made for my Shopify store. Customer satisfaction scores are at an all-time high."</p>
+                    <h4>Emily Rodriguez</h4>
+                    <p class="position">Owner, EcoLiving</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <h2>Let's Work Together</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3 style="margin-bottom: 1rem;">Get in Touch</h3>
+                    <p style="margin-bottom: 2rem;">Ready to transform your customer support? Let's discuss how I can help your Shopify store.</p>
+                    
+                    <div style="margin-bottom: 1rem;">
+                        <i class="fas fa-envelope" style="color: var(--primary-color); margin-right: 1rem;"></i>
+                        <span>javeria@jiyaecomcare.com</span>
+                    </div>
+                    
+                    <div class="btn-group" style="justify-content: flex-start;">
+                        <a href="#" class="btn btn-primary">Hire me on Fiverr</a>
+                        <a href="#" class="btn btn-secondary">Hire me on Upwork</a>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <form>
+                        <div class="form-group">
+                            <input type="text" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" placeholder="Your Store URL" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="Tell me about your support needs..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Jiya EcomCare</h4>
+                <p>Professional Shopify Customer Support Specialist helping eCommerce brands deliver exceptional customer experiences.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <p><a href="#home" style="color: var(--footer-text); text-decoration: none; display: block; margin-bottom: 0.5rem;">Home</a></p>
+                <p><a href="#about" style="color: var(--footer-text); text-decoration: none; display: block; margin-bottom: 0.5rem;">About</a></p>
+                <p><a href="#services" style="color: var(--footer-text); text-decoration: none; display: block; margin-bottom: 0.5rem;">Services</a></p>
+                <p><a href="#contact" style="color: var(--footer-text); text-decoration: none; display: block;">Contact</a></p>
+            </div>
+            <div class="footer-section">
+                <h4>Connect With Me</h4>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2024 Jiya EcomCare. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.querySelector('.nav-links').classList.remove('active');
+            });
+        });
+
+        // THEME SWITCHER FUNCTION
+        function switchTheme(themeName) {
+            document.documentElement.setAttribute('data-theme', themeName);
+            localStorage.setItem('selectedTheme', themeName);
+        }
+
+        // Load saved theme on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedTheme = localStorage.getItem('selectedTheme') || 'light';
+            document.documentElement.setAttribute('data-theme', savedTheme);
+            document.getElementById('theme-select').value = savedTheme;
+        });
+    </script>
+</body>
+</html>
